@@ -1,0 +1,38 @@
+<script>
+  const navbarList = document.querySelector(".navbar ul");
+  const logo = document.querySelector(".logo");
+  const icon = document.querySelector(".icon");
+  window.addEventListener("load", () => {
+    if (window.scrollY > 1) {
+      if (!navbarList?.classList.contains("navbar-hide")) {
+        navbarList?.classList.remove("navbar-show");
+        navbarList?.classList.add("navbar-hide");
+        logo?.classList.remove("navbar-show");
+        logo?.classList.add("navbar-hide");
+        icon?.classList.remove("icon-show");
+        icon?.classList.add("icon-hide");
+      }
+    }
+  });
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1) {
+      if (!navbarList?.classList.contains("navbar-hide")) {
+        navbarList?.classList.remove("navbar-show");
+        navbarList?.classList.add("navbar-hide");
+        logo?.classList.remove("navbar-show");
+        logo?.classList.add("navbar-hide");
+        icon?.classList.remove("icon-show");
+        icon?.classList.add("icon-hide");
+      }
+    } else if (window.scrollY <= 10) {
+      if (navbarList?.classList.contains("navbar-hide")) {
+        navbarList?.classList.remove("navbar-hide");
+        navbarList?.classList.add("navbar-show");
+        logo?.classList.remove("navbar-hide");
+        logo?.classList.add("navbar-show");
+        icon?.classList.remove("icon-hide");
+        icon?.classList.add("icon-show");
+      }
+    }
+  });
+</script>

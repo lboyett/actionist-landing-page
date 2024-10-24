@@ -1,0 +1,197 @@
+*,
+html,
+body {
+  /* scroll-behavior: smooth !important; */
+}
+
+body {
+  font-family: "Poppins";
+  position: relative;
+  background-color: rgb(247, 244, 243);
+}
+.navbar {
+  position: absolute;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  animation: 2s navbarDrop;
+}
+
+.logo-container {
+  width: 186px;
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  width: 30px;
+}
+
+.logo {
+  width: 140px;
+  display: none;
+  margin-left: auto;
+}
+
+.navbar ul {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.link-ball {
+  height: 5px;
+  width: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.navbar ul li:hover {
+  cursor: pointer;
+}
+
+.navbar ul li:hover .link-ball {
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+}
+.navbar-hide {
+  transform: translateY(-70px);
+  transition: all 0.5s;
+}
+.navbar-show {
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+.icon-hide {
+  position: fixed;
+}
+
+.icon-show {
+  position: static;
+}
+
+.section-1 {
+  height: 100vh;
+  background-image: url("../assets/bg.jpg");
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-1 div {
+  font-size: 30px;
+  text-align: center;
+  padding: 0 20px;
+  animation: 2s slideInFromLeft;
+}
+
+.section-2 {
+  height: 500px;
+  width: 100%;
+  margin-top: 32px;
+  position: relative;
+}
+
+.section-2 .content {
+  padding: 24px;
+  color: rgb(47, 29, 52);
+}
+
+.section-2 .ball {
+  background-color: rgb(255, 85, 0);
+  border-radius: 50%;
+  height: 185px;
+  width: 185px;
+  filter: blur(40px);
+  position: absolute;
+  top: 0;
+  right: 100px;
+  z-index: -1;
+}
+.section-2 .content h2 {
+  font-size: 50px;
+  letter-spacing: -2px;
+  line-height: 55px;
+}
+
+.section-2 .content img {
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+.section-2 .content p {
+  margin-top: 2rem;
+}
+
+.section-2 .content button {
+  display: flex;
+  padding: 8px 12px;
+  border-radius: 24px;
+  background-color: rgb(47, 29, 52);
+  color: white;
+  margin-top: 2rem;
+}
+
+@media (min-width: 850px) {
+  .navbar {
+    padding: 50px 40px;
+  }
+  .logo {
+    display: block;
+  }
+
+  .navbar button {
+    display: none;
+  }
+  .navbar ul {
+    display: flex;
+  }
+
+  .section-2 .content {
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes navbarDrop {
+  0% {
+    transform: translateY(-20%);
+
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+}
